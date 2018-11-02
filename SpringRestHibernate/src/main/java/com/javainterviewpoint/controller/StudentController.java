@@ -61,6 +61,13 @@ public class StudentController
         List<Student> studentList = studentDAOImpl.getAllStudents();
         return studentList;
     }
+    @RequestMapping(value="/studentssss",produces="application/json",
+            method=RequestMethod.GET)
+    public List<Student> getAllStudentssss()
+    {
+        List<Student> studentList = studentDAOImpl.getAllStudents();
+        return studentList;
+    }
     
     
     
