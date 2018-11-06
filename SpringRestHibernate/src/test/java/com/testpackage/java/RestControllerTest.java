@@ -46,7 +46,7 @@ public class RestControllerTest {
 		student.setName("cmdcnd");
 		studentDao.createStudent(Mockito.any(Student.class));
 		Mockito.doNothing().when(studentDao).createStudent(Mockito.any(Student.class));
-
+		stuC.createStudent(student);
 	}
 
 	@Test
