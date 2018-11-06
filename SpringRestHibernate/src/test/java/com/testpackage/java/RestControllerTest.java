@@ -23,12 +23,12 @@ public class RestControllerTest {
 		Assert.assertEquals(result, "Hllonsic");
 		
 	}
-	@Test
+	/*@Test
 	public void testMethod2()
 	{
 		String result= stuC.getA();
 		Assert.assertEquals(result, "Hllsic");
 		
-	}
+	}*/
 
 }
