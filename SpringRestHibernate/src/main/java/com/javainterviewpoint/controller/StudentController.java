@@ -69,6 +69,12 @@ public class StudentController
         return studentList;
     }
     
+    @RequestMapping(value="/studentss", method = RequestMethod.GET)
+    public String getA()
+    {
+        return "Hllonsic";
+    }
+    
     
     
     
