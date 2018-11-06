@@ -15,7 +15,6 @@ import com.javainterviewpoint.controller.StudentController;
 import com.javainterviewpoint.dao.StudentDAOImpl;
 import com.javainterviewpoint.model.Student;
 
-
 public class RestControllerTest {
 	@Mock
 	StudentDAOImpl studentDao;
@@ -24,10 +23,9 @@ public class RestControllerTest {
 	StudentController stuC;
 
 	@Before
-	public   void setUp() {
-		
-		
-		MockitoAnnotations.initMocks(this);		
+	public void setUp() {
+
+		MockitoAnnotations.initMocks(this);
 		System.out.println("Before method---------------");
 	}
 
@@ -36,7 +34,18 @@ public class RestControllerTest {
 		String result = "Hello";
 		Mockito.when(studentDao.getString(Mockito.anyString())).thenReturn("Hello");
 		Assert.assertEquals(result, stuC.getA());
-		//Assert.assertNotEquals("Hello", stuC.getA());
+		// Assert.assertNotEquals("Hello", stuC.getA());
+
+	}
+
+	@Test
+	public void testSave() {
+		Student student = new Student();
+		student.setAge(20);
+		student.setId(10);
+		student.setName("cmdcnd");
+		studentDao.createStudent(Mockito.any(Student.class));
+		Mockito.doNothing().when(studentDao).createStudent(Mockito.any(Student.class));
 
 	}
 
@@ -46,12 +55,13 @@ public class RestControllerTest {
 		student.setAge(20);
 		student.setId(10);
 		student.setName("cmdcnd");
-		
+
 		Mockito.when(studentDao.getStudentById(Mockito.anyLong())).thenReturn(student);
-		Assert.assertEquals(student,stuC.getStudentById(10L));
-		Assert.assertEquals("cmdcnd",stuC.getStudentById(10L).getName());
+		Assert.assertEquals(student, stuC.getStudentById(10L));
+		Assert.assertEquals("cmdcnd", stuC.getStudentById(10L).getName());
 
 	}
+
 	@Test
 	public void testgetAll() {
 		Student student1 = new Student();
@@ -65,8 +75,7 @@ public class RestControllerTest {
 		List<Student> result = new ArrayList<>();
 		result.add(student1);
 		result.add(student2);
-		
-		
+
 		Mockito.when(studentDao.getAllStudents()).thenReturn(result);
 		Assert.assertEquals(result, stuC.getAllStudents());
 
