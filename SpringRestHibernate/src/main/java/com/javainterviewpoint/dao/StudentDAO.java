@@ -11,7 +11,7 @@ public interface StudentDAO
     public Student getStudentById(long id);
     public List<Student> getAllStudents();
     
-    public void updateStudent(Student student);
+    public String getString(String s);
     
-    public void deleteStudent(long id);
+   
 }

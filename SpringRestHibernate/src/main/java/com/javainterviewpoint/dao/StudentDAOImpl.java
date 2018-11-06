@@ -38,16 +38,10 @@ public class StudentDAOImpl implements StudentDAO
         return entityManager.createQuery("select stu from Student stu").getResultList();
     }
 
-    @Override
-    public void updateStudent(Student student)
-    {
-        entityManager.merge(student);
-    }
-
-    @Override
-    public void deleteStudent(long id)
-    {
-        Student s = entityManager.find(Student.class,id);
-        entityManager.remove(s);
-    }
+   
+	@Override
+	public String getString(String s) {
+		// TODO Auto-generated method stub
+		return "Hello";
+	}
 }

@@ -20,7 +20,11 @@ public class StudentController
     @Autowired
     private StudentDAOImpl studentDAOImpl;
     
-    /*** Creating a new Student ***/
+    public StudentController(StudentDAOImpl studentDao) {
+		this.studentDAOImpl=studentDao;
+	}
+
+	/*** Creating a new Student ***/
     @RequestMapping(value="/create", method=RequestMethod.POST, 
             produces="application/json", consumes="application/json")
     public void createStudent(@RequestBody Student student)
@@ -45,34 +49,12 @@ public class StudentController
         List<Student> studentList = studentDAOImpl.getAllStudents();
         return studentList;
     }
-    /*** Retrieve all Students ***/
-    @RequestMapping(value="/studentss",produces="application/json",
-            method=RequestMethod.GET)
-    public List<Student> getAllStudentss()
-    {
-        List<Student> studentList = studentDAOImpl.getAllStudents();
-        return studentList;
-    }
-    /*** Retrieve all Students ***/
-    @RequestMapping(value="/studentsss",produces="application/json",
-            method=RequestMethod.GET)
-    public List<Student> getAllStudentsss()
-    {
-        List<Student> studentList = studentDAOImpl.getAllStudents();
-        return studentList;
-    }
-    @RequestMapping(value="/studentssss",produces="application/json",
-            method=RequestMethod.GET)
-    public List<Student> getAllStudentssss()
-    {
-        List<Student> studentList = studentDAOImpl.getAllStudents();
-        return studentList;
-    }
+    
     
     @RequestMapping(value="/studentss", method = RequestMethod.GET)
     public String getA()
     {
-        return "Hllonsic";
+        return studentDAOImpl.getString("ciscxei");
     }
     
     
