@@ -46,3 +46,11 @@ git commit -m "message" :::::: to commit all the changes to local repo
 git push  -u origin branch :::: to push all the chages to the Remote Repo
 
 git add -A && git commit -m "comment" ::: to add and commit at once
+
+git push --set-upstream origin newbrnachname :: to push the branch and set upstream without using origin
+
+git checkout -b branchname origin/branchname
+while checking out the code from git itself, u need to give the command like above:
+Here, by default we are setting the upstream branch
+
+git diff <source_branch> <target_branch>
