@@ -1,0 +1,48 @@
+-------------DB username and password----------------
+postgres
+uname:postgres
+password:abcdABCD12!!
+
+oracle
+uname:system
+password:abcdABCD12!!
+
+--------------github username and password --------------------
+uname:ganesh1044693
+password:abcdABCD78!!
+
+git  remote add  origin https://github.com/ganesh1044693/gitpractice.git
+git clone -b branchone --single-branch https://github.com/ganesh1044693/gitpractice.git
+git clone -b branchone origin  https://github.com/ganesh1044693/gitpractice.git
+---------------------maven commands------------------------
+
+mvn clean package -Dmaven.test.skip=true
+mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar -Dfile=C:\Users\M1044693\Desktop\ojd\ojdbc6.jar 
+mvn deploy:deploy-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Durl=file:./local-maven-repo/ -DrepositoryId=local-maven-repo -DupdateReleaseInfo=true -Dfile=C:\Users\M1044693\Desktop\ojd\ojdbc6.jar
+
+
+---------------------------SBT COMMANDS-----------------------------------
+sbt clean compile publishLocal "set offline:=true" 
+sbt clean compile run "set offline:=true"   ----------node
+sbt clean compile "run 9001" "set offline:=true" --------client
+sbt "set offline:=true"  clean compile run -jvm-debug 10000 ---=---- TO DEBUG NODE
+sbt "set offline:=true" "run 9001" -jvm-debug 10001 -------- TO RUN CLIENT ON SOME PORT 
+
+-------------Spring Boot Applications------------
+To start the application in debug mode
+mvn spring-boot:run -Drun.jvmArguments=”-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8676″
+
+-------------git commands------------
+git branch -a :::::::::::::: to see all the local and remote branches
+
+git checkout branchname :::::: to switch to other branch
+
+git checkout -b branchname :::: to create new branch and move to it 
+
+git  add . :::: to add all the files
+
+git commit -m "message" :::::: to commit all the changes to local repo
+
+git push  -u origin branch :::: to push all the chages to the Remote Repo
+
+git add -A && git commit -m "comment" ::: to add and commit at once

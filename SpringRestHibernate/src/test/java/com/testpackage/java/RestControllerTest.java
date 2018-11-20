@@ -12,6 +12,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import com.javainterviewpoint.controller.StudentController;
+import com.javainterviewpoint.dao.StudentDAO;
 import com.javainterviewpoint.dao.StudentDAOImpl;
 import com.javainterviewpoint.model.Student;
 
